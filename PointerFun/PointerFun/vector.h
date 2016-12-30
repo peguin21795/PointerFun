@@ -12,7 +12,7 @@ public:
 	A_Vector();
 	~A_Vector();
 	void showContents();
-	void remove();
+	void remove(int);
 	void add(T);
 	T getData(int);
 	int length();
@@ -39,9 +39,24 @@ A_Vector <T>::~A_Vector()
 
 
 template <typename T>
-void A_Vector <T>::remove()
+void A_Vector <T>::remove(int index)
 {
+	T* _cloneAv = new T[iterator];
+	/* Everything before said index will remain at the same position in the vector */
+	for (int i = 0; i < iterator - 1; i++)
+	{
+		if (i < index)
+		{
+			_cloneAv[i] = av[i];
+		}
+		else
+		{
+			_cloneAv[i] = av[i + 1];
+		}
+	}
 
+	av = _cloneAv;
+	iterator--;
 }
 
 template <typename T>

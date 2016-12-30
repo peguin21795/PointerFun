@@ -19,17 +19,15 @@ Node* listOfNodes(string[]);
 
 int main()
 {
-	/*string fruits[STR_LEN] = {"Apple", "Banana", "Grapefruit", "Oranges", "Kiwi"};
-	Node* fruitNodes = listOfNodes(fruits);
-	Node addInFruit("Guava");
-	fruitNodes[2].insert(&addInFruit);
-	printNode(&fruitNodes[2]);*/
-	A_Vector <double> a;
-	a.add(6);
-	a.add(10);
-	a.add(15);
-	a.add(20);
-	cout << a.getData(0) << endl;
+	A_Vector <string> a;
+	string fruits[STR_LEN] = { "Apple", "Banana", "Grapefruit", "Oranges", "Kiwi" };
+	for (int i = 0; i < STR_LEN; i++)
+	{
+		a.add(fruits[i]);
+	}
+	a.showContents();
+	cout << "---------------------------------------" << endl;
+	a.remove(2);
 	a.showContents();
 	system("PAUSE");
 	return 0;
